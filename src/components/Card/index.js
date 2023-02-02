@@ -1,19 +1,23 @@
-function Card(){
+import styles from './Card.module.scss';
+
+console.log(styles);
+
+function Card(props){
     return(
-        <div className="card">
-          <div className="favorite">
+        <div className={styles.card}>
+          <div className={styles.favorite}>
             <img src="img/heartFalse.svg" alt="Unliked" />
           </div>
           <img
             width={133}
             height={112}
-            src="/img/sneakers/1.svg"
+            src={props.imageUrl}
             alt="First sneakers"
           />
-          <p>Nike Blazer Mid Suede</p>
+          <p>{props.title}</p>
           <div className="cardDescription">
-            <b>3780 грн</b>
-            <button className="button">
+            <b>{props.price} грн.</b>
+            <button className="button" onClick={props.onClick}>
               <img width={11} height={11} src="/img/add.svg" alt="Add" />
             </button>
           </div>

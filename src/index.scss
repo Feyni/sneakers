@@ -56,16 +56,19 @@ header {
 
     .li1 {
       margin-right: 30px;
+      cursor: pointer;
     }
 
     .price {
       margin-left: 10px;
+      
     }
 
   }
 }
 
 .content {
+
   padding: 40px;
 
   h1 {
@@ -81,19 +84,11 @@ header {
   justify-content: space-between;
   align-items: center;
 
-  .button {
-    background: #FFFFFF;
-    border: 1px solid #F2F2F2;
-    border-radius: 8px;
-    height: 32px;
-    width: 32px;
-    cursor: pointer;
-  }
 }
 
 .sneakers {
   display: flex;
-  //justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .search {

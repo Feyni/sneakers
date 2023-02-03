@@ -1,31 +1,25 @@
+import React from "react";
 import Card from "./components/Card";
 import Header from "./components/Header";
 import Drawer from "./components/Drawer";
 
-const arr = [
-  {
-    title: "Nike Blazer Mid Suede",
-    price: 3780,
-    imageUrl: "/img/sneakers/1.svg",
-  },
-  { title: "Nike Air Max 270", price: 4490, imageUrl: "/img/sneakers/2.svg" },
-  {
-    title: "Nike Blazer Mid Suede",
-    price: 4200,
-    imageUrl: "/img/sneakers/3.svg",
-  },
-  {
-    title: "Puma X Aka Boku Future Rider",
-    price: 2900,
-    imageUrl: "/img/sneakers/4.svg",
-  },
-];
 
 function App() {
+  const [items, setItems] = React.useState([]);
+  const [cartOpened, setCartOpened] = React.useState(false);
+ 
+  React.useEffect(()=>{
+    fetch('https://63dce3b5367aa5a7a4041169.mockapi.io/items').then(res => {
+      return res.json();
+    }).then(json=>{
+      setItems(json);
+    })
+  }, []);
+
   return (
     <div className="wrapper">
-      <Drawer />
-      <Header />
+      {cartOpened && <Drawer onClickClose={()=>setCartOpened(false)}/>}
+      <Header onClickCart={()=> setCartOpened(true)}/>
       <div className="content">
         <div className="headerContent">
           <h1>Кроссовки</h1>
@@ -36,8 +30,14 @@ function App() {
         </div>
 
         <div className="sneakers">
-          {arr.map((obj) => (
-            <Card title={obj.title} price={obj.price} imageUrl={obj.imageUrl} onClick={()=>console.log(obj)} />
+          {items.map((obj) => (
+            <Card
+              title={obj.title}
+              price={obj.price}
+              imageUrl={obj.imageUrl}
+              onClickFavorite={() => console.log("Любимое")}
+              onClickPlus={() => console.log("Плюс")}
+            />
           ))}
         </div>
       </div>

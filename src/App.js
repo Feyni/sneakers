@@ -5,18 +5,7 @@ import Drawer from "./components/Drawer";
 
 function App() {
   const [items, setItems] = React.useState([]);
-  const [cartItems, setCartItems] = React.useState([
-    {
-      title: "Nike Blazer Mid Suede",
-      price: 3780,
-      imageUrl: "/img/sneakers/1.svg",
-    },
-    { 
-      title: "Nike Air Max 270",
-      price: 4490,
-      imageUrl: "/img/sneakers/2.svg" 
-    },
-  ]);
+  const [cartItems, setCartItems] = React.useState([]);
   const [cartOpened, setCartOpened] = React.useState(false);
 
   React.useEffect(() => {
@@ -28,6 +17,11 @@ function App() {
         setItems(json);
       });
   }, []);
+
+  const onAddToCart=(obj)=>{
+    setCartItems(prev=>[...prev, obj]);
+  }
+
 
   return (
     <div className="wrapper">
@@ -45,13 +39,13 @@ function App() {
         </div>
 
         <div className="sneakers">
-          {items.map((obj) => (
+          {items.map((item) => (
             <Card
-              title={obj.title}
-              price={obj.price}
-              imageUrl={obj.imageUrl}
-              onClickFavorite={() => console.log("Любимое")}
-              onClickPlus={() => console.log("Плюс")}
+              title={item.title}
+              price={item.price}
+              imageUrl={item.imageUrl}
+              onFavorite={() => console.log("Любимое")}
+              onPlus={(obj)=>onAddToCart(obj)}
             />
           ))}
         </div>

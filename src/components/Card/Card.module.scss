@@ -8,6 +8,12 @@
 
   transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
 
+  .cardDescription{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
   .plus {
     cursor: pointer;
   }

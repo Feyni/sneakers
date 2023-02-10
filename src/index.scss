@@ -3,7 +3,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #E7F6FF;
-  
+
 }
 
 * {
@@ -11,6 +11,7 @@ body {
 
   box-sizing: border-box;
   outline: none;
+  //overflow: hidden;
 }
 
 li {
@@ -62,7 +63,7 @@ header {
 
     .price {
       margin-left: 10px;
-      
+
     }
 
   }
@@ -99,7 +100,7 @@ header {
   padding: 0 15px;
   position: relative;
 
-  .clear{
+  .clear {
     position: absolute;
     right: 0;
     width: 18px;
@@ -134,6 +135,53 @@ header {
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
+
+.emptyDrawer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
+  text-align: center;
+
+  p {
+    opacity: 0.6;
+    width: 280px;
+  }
+
+  h3 {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    //align-items: center;
+  }
+
+  .greenButton {
+    position: relative;
+    width: 245px;
+    margin-top: 20px;
+
+    &:hover{
+      img{
+        transform: rotate(180deg) translateX(3px);
+      }
+    }
+
+    img {
+      position: absolute;
+      transform: rotate(180deg);
+      top:20px;
+      left: 30px;
+      transition: transform 0.15s ease-in-out;
+    }
+
+    &:active {
+      background: darken(#9DD558, 5%);
+    }
+
+  }
+}
+
 
 .drawer {
   display: flex;
@@ -177,10 +225,11 @@ header {
     overflow: hidden;
     padding: 20px;
 
-    .qwewq{
+    .qwewq {
       display: flex;
       align-items: center;
     }
+
     p {
       margin: 0;
       font-size: 16px;
@@ -201,7 +250,7 @@ header {
     }
 
     .removeBtn {
-      
+
       opacity: 0.5;
       transition: opacity 0.15s ease-in-out;
       cursor: pointer;
@@ -243,6 +292,8 @@ header {
 
     .greenButton {
       position: relative;
+      width: 100%;
+      height: 55px;
 
       &:hover {
         img {
@@ -260,10 +311,7 @@ header {
   }
 
   .greenButton {
-
-    width: 100%;
     height: 55px;
-
     background: #9DD558;
     border-radius: 18px;
     border: 0;
@@ -276,6 +324,7 @@ header {
 
     &:hover {
       background: lighten(#9DD558, 5%);
+      
     }
 
     &:active {

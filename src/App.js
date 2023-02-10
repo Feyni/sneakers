@@ -42,9 +42,7 @@ function App() {
       <div className="content">
         <div className="headerContent">
           <h1>
-            {searchValue
-              ? `Поиск по запросу: "${searchValue}"`
-              : "Все кроссовки"}
+          Кроссовки
           </h1>
           <div className="search">
             <img src="/img/search.svg" alt="Search" />
@@ -73,7 +71,7 @@ function App() {
                 title={item.title}
                 price={item.price}
                 imageUrl={item.imageUrl}
-                onFavorite={() => console.log("Любимое")}
+                onFavorite={(obj) => console.log(obj)}
                 onPlus={(obj) => onAddToCart(obj)}
               />
             ))}

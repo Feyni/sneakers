@@ -11,7 +11,6 @@ body {
 
   box-sizing: border-box;
   outline: none;
-  //overflow: hidden;
 }
 
 li {
@@ -22,6 +21,8 @@ ul {
   margin: 0;
   padding: 0;
 }
+
+
 
 .wrapper {
   background: #FFFFFF;
@@ -61,9 +62,15 @@ header {
       cursor: pointer;
     }
 
+    
     .price {
       margin-left: 10px;
 
+    }
+
+    .favoriteButton{
+      margin-right: 30px;
+      cursor: pointer;
     }
 
   }
@@ -153,7 +160,6 @@ header {
     display: flex;
     justify-content: center;
     margin: 0;
-    //align-items: center;
   }
 
   .greenButton {

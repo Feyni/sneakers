@@ -13,7 +13,7 @@ function Card({title, imageUrl, price, onFavorite, onPlus}) {
   const onClickFavorite = () => {
     onFavorite({title, imageUrl, price});
     setIsFavorite(!isFavorite);
-  };
+  }; 
 
   return (
     <div className={styles.card}>

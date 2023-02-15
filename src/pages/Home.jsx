@@ -3,7 +3,8 @@ function Home({ items,
   searchValue,
   setSearchValue,
   onChangeSearchInput,
-  onAddToCart }) {
+  onAddToCart,
+  onAddToFavorite }) {
   return (<div className="content">
     <div className="headerContent">
       <h1>
@@ -33,11 +34,9 @@ function Home({ items,
         .map((item, index) => (
           <Card
             key={index}
-            title={item.title}
-            price={item.price}
-            imageUrl={item.imageUrl}
-            onFavorite={(obj) => console.log(obj)}
+            onFavorite={(obj) => onAddToFavorite(obj)}
             onPlus={(obj) => onAddToCart(obj)}
+            {...item}
           />
         ))}
     </div>

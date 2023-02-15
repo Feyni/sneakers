@@ -57,18 +57,18 @@ header {
 
 
 
-    .li1 {
+    .cart {
       margin-right: 30px;
       cursor: pointer;
     }
 
-    
+
     .price {
       margin-left: 10px;
 
     }
 
-    .favoriteButton{
+    .favoriteButton {
       margin-right: 30px;
       cursor: pointer;
     }
@@ -167,8 +167,8 @@ header {
     width: 245px;
     margin-top: 20px;
 
-    &:hover{
-      img{
+    &:hover {
+      img {
         transform: rotate(180deg) translateX(3px);
       }
     }
@@ -176,7 +176,7 @@ header {
     img {
       position: absolute;
       transform: rotate(180deg);
-      top:20px;
+      top: 20px;
       left: 30px;
       transition: transform 0.15s ease-in-out;
     }
@@ -330,7 +330,7 @@ header {
 
     &:hover {
       background: lighten(#9DD558, 5%);
-      
+
     }
 
     &:active {

@@ -133,15 +133,7 @@ header {
   }
 }
 
-.overlay {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
+
 
 .emptyDrawer {
   display: flex;
@@ -150,6 +142,10 @@ header {
   flex-direction: column;
   flex: 1;
   text-align: center;
+
+  .boxImage {
+    margin-bottom: 20px;
+  }
 
   p {
     opacity: 0.6;
@@ -167,6 +163,11 @@ header {
     width: 245px;
     margin-top: 20px;
 
+    &:disabled {
+      background-color: #bebebe;
+      cursor: default;
+    }
+
     &:hover {
       img {
         transform: rotate(180deg) translateX(3px);
@@ -174,10 +175,10 @@ header {
     }
 
     img {
-      position: absolute;
+      position: relative;
+      top: 1px;
       transform: rotate(180deg);
-      top: 20px;
-      left: 30px;
+      margin-right: 15px;
       transition: transform 0.15s ease-in-out;
     }
 
@@ -189,154 +190,123 @@ header {
 }
 
 
-.drawer {
+
+
+
+.cartItem {
   display: flex;
-  flex-direction: column;
-  position: absolute;
-  width: 420px;
-  height: 100%;
-  right: 0;
-  background: #FFFFFF;
-  box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border: 1px solid #F3F3F3;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 20px;
 
-  padding: 30px;
-
-  .items {
-    overflow: auto;
-    margin-bottom: 40px;
-  }
-
-  h2 {
-    margin: 0;
-    margin-bottom: 30px;
+  .qwewq {
     display: flex;
-    justify-content: space-between;
-
-    img {
-      cursor: pointer;
-    }
-  }
-
-  .items {
-    flex: 1;
-  }
-
-  .cartItem {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
-    border: 1px solid #F3F3F3;
-    border-radius: 20px;
-    overflow: hidden;
-    padding: 20px;
+  }
 
-    .qwewq {
+  p {
+    margin: 0;
+    font-size: 16px;
+
+  }
+
+  b {
+    font-size: 14px;
+  }
+
+  .sneakersCart {
+    margin-right: 20px;
+
+  }
+
+  .descriptionItem {
+    margin-right: 20px;
+  }
+
+  .removeBtn {
+
+    opacity: 0.5;
+    transition: opacity 0.15s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.cartСonclusion {
+  display: flex;
+}
+
+
+.cartTax {
+  display: flex;
+}
+
+.cartTotalBlock {
+  ul {
+    margin-bottom: 40px;
+
+    li {
       display: flex;
-      align-items: center;
-    }
+      align-items: flex-end;
+      margin-bottom: 20px;
 
-    p {
-      margin: 0;
-      font-size: 16px;
-
-    }
-
-    b {
-      font-size: 14px;
-    }
-
-    .sneakersCart {
-      margin-right: 20px;
-
-    }
-
-    .descriptionItem {
-      margin-right: 20px;
-    }
-
-    .removeBtn {
-
-      opacity: 0.5;
-      transition: opacity 0.15s ease-in-out;
-      cursor: pointer;
-
-      &:hover {
-        opacity: 1;
-      }
-    }
-  }
-
-  .cartСonclusion {
-    display: flex;
-  }
-
-
-  .cartTax {
-    display: flex;
-  }
-
-  .cartTotalBlock {
-    ul {
-      margin-bottom: 40px;
-
-      li {
-        display: flex;
-        align-items: flex-end;
-        margin-bottom: 20px;
-
-        div {
-          flex: 1;
-          height: 1px;
-          border-bottom: 1px dashed #dfdfdf;
-          position: relative;
-          top: -4px;
-          margin: 0 7px;
-        }
-      }
-    }
-
-    .greenButton {
-      position: relative;
-      width: 100%;
-      height: 55px;
-
-      &:hover {
-        img {
-          transform: translateX(5px);
-        }
-      }
-
-      img {
-        position: absolute;
-        right: 33px;
-        top: 20px;
-        transition: transform 0.15s ease-in-out;
+      div {
+        flex: 1;
+        height: 1px;
+        border-bottom: 1px dashed #dfdfdf;
+        position: relative;
+        top: -4px;
+        margin: 0 7px;
       }
     }
   }
 
   .greenButton {
+    position: relative;
+    width: 100%;
     height: 55px;
-    background: #9DD558;
-    border-radius: 18px;
-    border: 0;
-    color: #FFFFFF;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background 0.1s ease-in-out;
-
 
     &:hover {
-      background: lighten(#9DD558, 5%);
-
+      img {
+        transform: translateX(5px);
+      }
     }
 
-    &:active {
-      background: darken(#9DD558, 5%);
+    img {
+      position: absolute;
+      right: 33px;
+      top: 20px;
+      transition: transform 0.15s ease-in-out;
     }
+  }
+}
 
+.greenButton {
+  height: 55px;
+  background: #9DD558;
+  border-radius: 18px;
+  border: 0;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.1s ease-in-out;
+
+
+  &:hover {
+    background: lighten(#9DD558, 5%);
+
+  }
+
+  &:active {
+    background: darken(#9DD558, 5%);
   }
 
 }

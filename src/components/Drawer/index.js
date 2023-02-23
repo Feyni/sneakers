@@ -55,7 +55,7 @@ function Drawer({ onClickClose, onRemove, items = [], opened }) {
 
         {items.length > 0 ? (
           <>
-            <div className="items">
+            <div className={`${styles.items}`}>
               {items.map((obj) => (
                 <div key={obj.id} className="cartItem">
                   <div className="qwewq">

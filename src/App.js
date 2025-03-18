@@ -24,7 +24,7 @@ function App() {
           await Promise.all([
             axios.get("https://63dce3b5367aa5a7a4041169.mockapi.io/cart"),
             axios.get("https://63dce3b5367aa5a7a4041169.mockapi.io/favorite"),
-            axios.get("https://qxz1cznn55.api.quickmocker.com/items"),
+            axios.get("https://63f295c1f28929a9df5cd1a5.mockapi.io/items"),
           ]);
 
         setIsLoading(false);

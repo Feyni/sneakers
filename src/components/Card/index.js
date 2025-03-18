@@ -20,6 +20,8 @@ function Card({
   const itemObj = { id, parentId: id, title, imageUrl, price };
 
   const onClickPlus = () => {
+    console.log("Кнопка нажата, ID:", id);
+
     onPlus(itemObj);
   };
 
